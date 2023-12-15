@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ScamLocatorResults</class>
+ <widget class="QDialog" name="ScamLocatorResults">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>880</width>
+    <height>695</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog#ScamLocatorResults {
+background-color: qlineargradient(spread:reflect, x1:0.489158, y1:0.398, x2:1, y2:1, stop:0.389474 rgb(25, 25, 25), stop:0.973684 rgba(191, 0, 0, 255));
+}</string>
+  </property>
+  <property name="locale">
+   <locale language="English" country="UnitedStates"/>
+  </property>
+  <widget class="QLabel" name="MessageLabel">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>120</y>
+     <width>261</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 20pt &quot;Rockwell&quot;;
+color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>Your Message:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="ResultsLabel">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>120</y>
+     <width>251</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 20pt &quot;Rockwell&quot;;
+color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>Check results:</string>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="Results">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>170</y>
+     <width>411</width>
+     <height>511</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QTextEdit{
+border: 4px solid;
+font: 18pt &quot;Rockwell&quot;;
+border-color: rgb(144, 31, 31);
+}
+</string>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="CheckedMessage">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>170</y>
+     <width>411</width>
+     <height>511</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Rockwell</family>
+     <pointsize>18</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QTextEdit{
+border: 4px solid;
+font: 18pt &quot;Rockwell&quot;;
+border-color: rgb(144, 31, 31);
+}
+</string>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="GoBackBTN">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>10</y>
+     <width>111</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+background-color: qradialgradient(spread:reflect, cx:0.473684, cy:0.347, radius:1.118, fx:0.478526, fy:0.342, stop:0.331579 rgba(246, 0, 0, 255), stop:0.626316 rgba(150, 0, 0, 255));
+font: 20pt &quot;Trebuchet MS&quot;;
+text-align: center;
+border: 4px solid;
+border-radius: 35px;
+color: rgb(255, 255, 255);
+border-color: rgb(95, 11, 11);
+}
+
+QPushButton:hover{
+background-color: rgb(0, 0, 0);
+color: rgb(246, 0, 0);
+border-color: rgb(246, 0, 0);
+}</string>
+   </property>
+   <property name="text">
+    <string>Back</string>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="resources/logo_resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>

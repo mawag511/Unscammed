@@ -1,0 +1,5 @@
+VirtEnv/
+__pycache__/
+/training/__pycache__/
+/resources/__pycache__/
+/training/.ipynb_checkpoints/

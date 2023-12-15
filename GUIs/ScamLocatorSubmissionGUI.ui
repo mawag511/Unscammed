@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ScamLocatorSubmission</class>
+ <widget class="QDialog" name="ScamLocatorSubmission">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>880</width>
+    <height>695</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog#ScamLocatorSubmission {
+background-color: qlineargradient(spread:reflect, x1:0.489158, y1:0.398, x2:1, y2:1, stop:0.389474 rgb(25, 25, 25), stop:0.973684 rgba(191, 0, 0, 255));
+}</string>
+  </property>
+  <property name="locale">
+   <locale language="English" country="UnitedStates"/>
+  </property>
+  <widget class="QPushButton" name="SubmitBTN">
+   <property name="geometry">
+    <rect>
+     <x>350</x>
+     <y>520</y>
+     <width>181</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+background-color: qradialgradient(spread:reflect, cx:0.473684, cy:0.347, radius:1.118, fx:0.478526, fy:0.342, stop:0.331579 rgba(246, 0, 0, 255), stop:0.626316 rgba(150, 0, 0, 255));
+font: 20pt &quot;Trebuchet MS&quot;;
+text-align: center;
+border: 4px solid;
+border-radius: 45px;
+color: rgb(255, 255, 255);
+border-color: rgb(95, 11, 11);
+}
+
+QPushButton:hover{
+background-color: rgb(0, 0, 0);
+color: rgb(246, 0, 0);
+border-color: rgb(246, 0, 0);
+}</string>
+   </property>
+   <property name="text">
+    <string>Check</string>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="UserInput">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>260</y>
+     <width>761</width>
+     <height>221</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QTextEdit{
+border: 4px solid;
+font: 18pt &quot;Rockwell&quot;;
+border-color: black;
+}
+
+QTextEdit:focus{
+border-color: rgb(190, 2, 2);
+background-color: rgb(255, 220, 220);
+}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Box</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <property name="documentTitle">
+    <string/>
+   </property>
+   <property name="markdown">
+    <string/>
+   </property>
+   <property name="html">
+    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Rockwell'; font-size:18pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="InfoLabel">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>200</y>
+     <width>551</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 15pt &quot;Rockwell&quot;;
+border-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 0, 0, 0), stop:1 rgba(255, 255, 255, 0));
+color: white</string>
+   </property>
+   <property name="text">
+    <string>Please paste below the message to be checked</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="WarningLabel">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>630</y>
+     <width>451</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+font: 12pt &quot;Rockwell&quot;;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="GoBackBTN">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>10</y>
+     <width>111</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+background-color: qradialgradient(spread:reflect, cx:0.473684, cy:0.347, radius:1.118, fx:0.478526, fy:0.342, stop:0.331579 rgba(246, 0, 0, 255), stop:0.626316 rgba(150, 0, 0, 255));
+font: 20pt &quot;Trebuchet MS&quot;;
+text-align: center;
+border: 4px solid;
+border-radius: 35px;
+color: rgb(255, 255, 255);
+border-color: rgb(95, 11, 11);
+}
+
+QPushButton:hover{
+background-color: rgb(0, 0, 0);
+color: rgb(246, 0, 0);
+border-color: rgb(246, 0, 0);
+}</string>
+   </property>
+   <property name="text">
+    <string>Back</string>
+   </property>
+   <property name="default">
+    <bool>false</bool>
+   </property>
+   <property name="flat">
+    <bool>false</bool>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../resources/logo_resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>
