@@ -28,4 +28,4 @@ Desktop app for classification of spam/ham messages.
 > [!NOTE]
 > 1) After downloading the project, create a virtual environment for the folder and install the requirements within it with the command: `python -m pip install -r requirements.txt`
 > 2) Run project with the command: `python unscammed.py`
-> 3) To run tests -> `pytest functionality_test.py`
+> 3) Run tests with the command: `pytest functionality_test.py`
