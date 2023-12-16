@@ -58,7 +58,7 @@ class Main(QMainWindow):
     def check_message(self):
         input = self.UserInput.toPlainText()
 
-        if input != "":
+        if input != "" and len(input.strip()):
             self.WarningLabel.setText("")
             results = message_check(str(input))
             self.stackedWidget.setCurrentWidget(self.SL_results)
