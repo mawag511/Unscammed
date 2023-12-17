@@ -72,13 +72,13 @@ class Main(QMainWindow):
     def mousePressEvent(self, event):
         if event.button()==Qt.LeftButton:
             self.m_flag=True
-            self.m_Position=event.globalPos()-self.pos() #Get the position of the mouse relative to the window
+            self.m_Position=event.globalPos()-self.pos() 
             event.accept()
-            self.setCursor(QCursor(Qt.OpenHandCursor)) #Change the mouse icon
+            self.setCursor(QCursor(Qt.OpenHandCursor))
             
     def mouseMoveEvent(self, QMouseEvent):
         if Qt.LeftButton and self.m_flag:  
-            self.move(QMouseEvent.globalPos()-self.m_Position) #Change window position
+            self.move(QMouseEvent.globalPos()-self.m_Position)
             QMouseEvent.accept()
                 
     def mouseReleaseEvent(self, QMouseEvent):
