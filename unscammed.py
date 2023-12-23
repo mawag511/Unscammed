@@ -1,17 +1,18 @@
-from PyQt5.QtGui import  QIcon, QCursor, QMovie
+from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
-from PyQt5.QtCore import Qt, QTimer
+from PyQt5.QtCore import *
 from PyQt5.uic import loadUi
-import sys, time
-
 from scam_check import message_check
 from resources import logo_resource
+import sys, time
 
 ''' Splash Screen'''
 class SplashScreen(QDialog):
     def __init__(self):
         super(SplashScreen, self).__init__()
         loadUi("./GUIs/SplashScreenGUI.ui", self)
+        self.setWindowTitle("UNSCAMMED")
+        self.setWindowIcon(QIcon("./resources/assets/icon.png"))
         self.setWindowFlags(Qt.FramelessWindowHint)  
         self.setFixedWidth(815)
         self.setFixedHeight(490)
@@ -29,7 +30,16 @@ class SplashScreen(QDialog):
         window = Main()
         window.show()
         self.close()
-      
+
+
+class Worker(QThread):
+    progressChanged = pyqtSignal(int)
+    def run(self):
+        for count in range(2):
+            self.progressChanged.emit(count)
+            self.sleep(1)
+        self.progressChanged.emit(-1)
+
 
 ''' Main Application'''
 class Main(QMainWindow):
@@ -47,27 +57,47 @@ class Main(QMainWindow):
         self.SpamDetectionBTN.clicked.connect(self.open_clear)
         self.SubmitBTN.clicked.connect(self.check_message)
         self.GoBackBTN.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.main_menu))
-        self.GoBackBTN_2.clicked.connect(self.open_clear)
+        self.GoBackBTN_2.clicked.connect(self.open_clear)  
+
 
     def open_clear(self):
         self.stackedWidget.setCurrentWidget(self.SL_submission)
         self.WarningLabel.setText("")
         self.UserInput.setAcceptRichText(False)
 
-    ## check user input against ML algorithms
-    def check_message(self):
-        input = self.UserInput.toPlainText()
 
-        if input != "" and len(input.strip()):
+    ## check user input against ML algorithms
+    def loading(self):
+        self.movie = QMovie("./resources/assets/loading.gif")
+        self.Loading.setScaledContents(True)
+        self.Loading.setMovie(self.movie)
+        self.movie.start()
+
+
+    def check_message(self):
+        self.input = self.UserInput.toPlainText()
+        if self.input != "" and len(self.input.strip()):
+            self.worker = Worker()
+            self.worker.progressChanged.connect(
+                lambda: (self.Loading.show(), self.loading()))
+            self.worker.finished.connect(
+                lambda: (self.Loading.hide(), self.open_results()))
+            self.worker.start() 
             self.WarningLabel.setText("")
-            results = message_check(str(input))
-            self.stackedWidget.setCurrentWidget(self.SL_results)
-            self.Results.setText(results)
-            self.CheckedMessage.setText(input)
-            self.UserInput.setText("")
+            self.results = message_check(str(self.input))
         else:
             self.WarningLabel.setText("Please insert a message to verify!")
+
+
+    def open_results(self):
+        if self.input != "" and len(self.input.strip()):
+            self.stackedWidget.setCurrentWidget(self.SL_results)
+            self.Results.setAlignment(Qt.AlignCenter)
+            self.Results.setText(self.results)
+            self.CheckedMessage.setText(self.input)
+            self.UserInput.setText("")
     
+
     ## to drag frame
     def mousePressEvent(self, event):
         if event.button()==Qt.LeftButton:
