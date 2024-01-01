@@ -1,7 +1,5 @@
 # Unscammed
 
-Desktop app for classification of spam/ham messages.
-
 <img src="./resources/assets/splash_screen.gif" alt="App's splash screen" width="815" height="490">
 <img src="./resources/assets/overview.png" alt="App's overview">
 
